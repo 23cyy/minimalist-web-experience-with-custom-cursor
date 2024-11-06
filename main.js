@@ -78,17 +78,17 @@ const SECTIONS = [
     ).backgroundColor;
 
     if (show) {
-      // Définir la couleur du fond du curseur
+      // Set cursor background color
       customCursor.style.backgroundColor = bodyStyles.color;
 
-      // Gérer spécifiquement les cas de couleur pour le texte
+      // Specific color case management for text
       if (backgroundColor === "rgb(247, 247, 247)") {
-        // #f7f7f7
         customCursor.style.color = "#f7f7f7";
       } else if (backgroundColor === "rgb(248, 96, 62)") {
-        // #f8603e
+          
         customCursor.style.color = "#f8603e";
       } else {
+          
         customCursor.style.color = bodyStyles.backgroundColor;
       }
 
