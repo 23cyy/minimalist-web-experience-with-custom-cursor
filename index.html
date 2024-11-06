@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MakeFriends Studio</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="logo">
+        <span class="logo-static" data-cursor="true" data-section="home">Make</span>
+        <span class="logo-dynamic" id="logo-dynamic">Friends.</span>
+      </div>
+      <div class="nav-links">
+        <a data-cursor="true" data-section="home">Home.</a>
+        <a data-cursor="true" data-section="studio">Studio.</a>
+        <a data-cursor="true" data-section="contact">Contact.</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="section home active" id="home">
+        <h1>Studio.</h1>
+      </section>
+      <section class="section studio" id="studio">
+        <h1>Make.<br />Product.</h1>
+      </section>
+      <section class="section contact" id="contact">
+        <h1>Contact.</h1>
+      </section>
+    </main>
+
+    <aside>
+      <div class="side-text left">Making Solutions</div>
+      <div class="side-text right">Digital Product Studio</div>
+    </aside>
+
+    <div class="custom-cursor" aria-hidden="true">Click Me</div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

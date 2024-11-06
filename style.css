@@ -1,0 +1,209 @@
+:root {
+    --color-background: #2a2a2a;
+    --color-text: #ffffff;
+    --color-home: #343434;
+    --color-studio: #f7f7f7;
+    --color-contact: #f8603e;
+    --animation-duration: 0.6s;
+    --spacing-default: 2rem;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    min-height: 100vh;
+    overflow: hidden;
+    transition: color 0.3s ease;
+  }
+
+  body.dark-text {
+    color: #000000;
+  }
+
+  /* Navigation */
+  .nav {
+    position: fixed;
+    width: 100%;
+    padding: var(--spacing-default);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown var(--animation-duration) ease forwards;
+  }
+
+  .logo-dynamic {
+    opacity: 0;
+    animation: fadeTextIn var(--animation-duration) ease forwards;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: var(--spacing-default);
+  }
+
+  .nav-links a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    cursor: none;
+  }
+
+  .nav-links a:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  .nav-links a:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  .nav-links a:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  .nav-links a {
+    animation: fadeInDown var(--animation-duration) ease forwards;
+  }
+
+  /* Sections */
+  .section {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color var(--animation-duration) ease;
+    will-change: background-color;
+  }
+
+  .section.active {
+    display: flex;
+  }
+
+  .section h1 {
+    font-size: clamp(4rem, 8vw, 8rem);
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  .home {
+    background-color: var(--color-home);
+  }
+  .studio {
+    background-color: var(--color-studio);
+  }
+  .contact {
+    background-color: var(--color-contact);
+  }
+
+  /* Side Text */
+  .side-text {
+    position: fixed;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 0.8rem;
+    top: 50%;
+    opacity: 0;
+    animation: fadeIn var(--animation-duration) ease 1.2s forwards;
+  }
+
+  .side-text.left {
+    left: var(--spacing-default);
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  .side-text.right {
+    right: var(--spacing-default);
+    transform: translate(50%, -50%);
+  }
+
+  /* Custom Cursor */
+  .custom-cursor {
+    --cursor-size: 100px;
+    position: fixed;
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    border-radius: 50%;
+    background-color: var(--color-text);
+    color: var(--color-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 1000;
+    transition: opacity 0.2s ease, background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  /* Animations */
+  @keyframes fadeInDown {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeTextIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fade-out {
+    animation: fadeOut 0.3s ease forwards;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.3s ease forwards;
+  }
+
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+    }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .side-text {
+      display: none;
+    }
+
+    .nav {
+      padding: 1rem;
+    }
+
+    .nav-links {
+      gap: 1rem;
+    }
+  }
